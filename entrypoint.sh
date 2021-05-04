@@ -12,6 +12,7 @@ USER_NAME="$5"
 DESTINATION_REPOSITORY_USERNAME="$6"
 TARGET_BRANCH="$7"
 COMMIT_MESSAGE="$8"
+CURRENT-TAG="$9"
 
 if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
 then
@@ -68,6 +69,12 @@ git add .
 
 echo "git status:"
 git status
+
+if [ -z "$CURRENT-TAG" ]
+then
+  echo "tag $CURRENT-TAG"
+  git tag "$CURRENT-TAG"
+fi
 
 echo "git diff-index:"
 # git diff-index : to avoid doing the git commit failing if there are no changes to be commit
