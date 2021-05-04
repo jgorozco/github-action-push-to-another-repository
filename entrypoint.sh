@@ -12,7 +12,7 @@ USER_NAME="$5"
 DESTINATION_REPOSITORY_USERNAME="$6"
 TARGET_BRANCH="$7"
 COMMIT_MESSAGE="$8"
-CURRENT-TAG="$9"
+CURRENT_TAG="$9"
 
 if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
 then
@@ -70,10 +70,10 @@ git add .
 echo "git status:"
 git status
 
-if [ -z "$CURRENT-TAG" ]
+if [ -z "$CURRENT_TAG" ]
 then
-  echo "tag $CURRENT-TAG"
-  git tag "$CURRENT-TAG"
+  echo "adding tag $CURRENT_TAG"
+  git tag "$CURRENT_TAG"
 fi
 
 echo "git diff-index:"
