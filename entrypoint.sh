@@ -70,7 +70,7 @@ git add .
 echo "git status:"
 git status
 
-if [ -z "$CURRENT_TAG" ]
+if [ ! -z "$CURRENT_TAG" ]
 then
   echo "adding tag $CURRENT_TAG"
   git tag "$CURRENT_TAG"
